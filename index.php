@@ -10,8 +10,13 @@ class MyDB extends SQLite3
 $users = getUsers();
 
 if ($_REQUEST['user_id']){
-    $user = getUser($_REQUEST['user_id']);
-    echo json_encode($user, JSON_UNESCAPED_UNICODE);
+    //$user = getUser($_REQUEST['user_id']);
+    foreach ($users as $user){
+        if ($user['ID'] == $_REQUEST['user_id']){
+            echo json_encode($user, JSON_UNESCAPED_UNICODE);
+            break;
+        }
+    }
     return null;
 }
 
@@ -78,7 +83,7 @@ if ($_REQUEST['user_id']){
         $result = [];
         $db = new MyDB();
         if (!$db) echo $db->lastErrorMsg();
-        $ret = $db->query('SELECT ID, FULL_NAME FROM USERS');
+        $ret = $db->query('SELECT * FROM USERS');
         while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
             $result[] = $row;
         }
