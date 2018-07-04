@@ -10,13 +10,14 @@ class MyDB extends SQLite3
 $users = getUsers();
 
 if ($_REQUEST['user_id']){
-    //$user = getUser($_REQUEST['user_id']);
-    foreach ($users as $user){
+    $user = getUser($_REQUEST['user_id']);
+    echo json_encode($user, JSON_UNESCAPED_UNICODE);
+    /*foreach ($users as $user){
         if ($user['ID'] == $_REQUEST['user_id']){
             echo json_encode($user, JSON_UNESCAPED_UNICODE);
             break;
         }
-    }
+    }*/
     return null;
 }
 
@@ -32,9 +33,9 @@ if ($_REQUEST['user_id']){
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/fh.css">
 </head>
-<body>
+<body onload="getUser(1)">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Users Actions</a>
+    <a class="navbar-brand" href="/">Users Actions</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -46,15 +47,14 @@ if ($_REQUEST['user_id']){
             <ul class="list-group list-group-flush" id="users-list">
                 <li class="list-group-item list-group-header">Пользователи</li>
                 <?php foreach ($users as $user): ?>
-                    <li onclick="getUser(<?= $user['ID'] ?>)" class="list-group-item list-group-item-action"><?= $user['FULL_NAME']; ?></li>
+                    <li id="user-list-item-<?= $user['ID'];?>" onclick="getUser(<?= $user['ID'] ?>)" class="list-group-item list-group-item-action"><?= $user['FULL_NAME']; ?></li>
                 <?php endforeach; ?>
             </ul>
         </div>
         <div class="col-sm-9">
-            <div class="no-user px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-                <h1 class="display-4">Действия пользователей</h1>
-                <p class="lead">Тестовое задание к собеседованию на должность Web разработчика PHP.</p>
-                <p class="lead">Что бы увидеть действия выберите одного из пользователей.</p>
+            <div class="p-4 mx-auto" id="user">
+                <h1 class="display-4" id="userName"></h1>
+                <div id="userInfo"></div>
             </div>
         </div>
     </div>
