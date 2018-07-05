@@ -4,4 +4,12 @@
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" id="dropdownNavMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Пользователи</button>
+                <?php include 'list_users.php'?>
+            </li>
+        </ul>
+    </div>
 </nav>

@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'template/head.php'?>
-<body>
+<body class="app">
 <?php include 'template/navbar.php'?>
-<main role="main" class="container">
+<main role="main" class="container app-content">
     <div class="row">
-        <div class="col-sm-3">
-            <?php include 'template/list_users.php'?>
-        </div>
-        <div class="col-sm-9" id="content">
-            <div class="jumbotron">
-                <h1 class="display-4">Hello, world!</h1>
-                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                <hr class="my-4">
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                <p class="lead">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                </p>
+        <div class="col" id="content">
+            <div class="jumbotron text-center">
+                <div class="container">
+                    <h1 class="display-4">Действия Пользователей...</h1>
+                    <p class="lead">Небольшое WEB приложение, в рамках тестового задания в качестве соискателя на долность PHP разработчика.</p>
+                    <hr class="my-4">
+                    <p>Для демонстрании приложения выберите пользователя...</p>
+                </div>
             </div>
         </div>
     </div>
