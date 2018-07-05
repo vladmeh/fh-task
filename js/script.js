@@ -2,7 +2,7 @@ getQueryParams();
 
 function getQueryParams() {
 	if (location.hash !== '') {
-		let qp = location.hash.replace('#', '');
+		let qp = location.hash.replace(/#/g,'');
 		let qp_arr = qp.split('/');
 		let userId = qp_arr[0];
 		if (qp_arr.length > 1 && qp_arr[1] === 'usecase') {
