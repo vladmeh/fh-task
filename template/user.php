@@ -40,7 +40,7 @@ function getFirstUser(): array
         <dt class="col-sm-3">Пол</dt><dd class="col-sm-9" id="userSex"><?=$user['SEX']?></dd>
         <dt class="col-sm-3">День рождения</dt><dd class="col-sm-9" id="userBirthDay"><?=$user['BIRTHDAY']?></dd>
     </dl>
-    <a href="#<?=$user['ID']?>/usecase" class="btn btn-info mx-5">Действия</a>
+    <a href="#<?=$user['ID']?>/usecase" class="btn btn-info mx-5" onclick=getUseCase(<?=$user['ID']?>)>Действия</a>
 </div>
 <?php else: ?>
 <div class="alert alert-danger" role="alert">

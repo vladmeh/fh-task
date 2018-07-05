@@ -11,3 +11,35 @@ INSERT INTO USERS (ID, FULL_NAME, TELEPHONE, SEX, BIRTHDAY) VALUES (7, 'Мала
 INSERT INTO USERS (ID, FULL_NAME, TELEPHONE, SEX, BIRTHDAY) VALUES (8, 'Ягешева Валентина', '444-22-33', 'женский', '1999-06-14');
 INSERT INTO USERS (ID, FULL_NAME, TELEPHONE, SEX, BIRTHDAY) VALUES (9, 'Левченко Юлий', '111-22-33', 'мужской', '1999-11-16');
 INSERT INTO USERS (ID, FULL_NAME, TELEPHONE, SEX, BIRTHDAY) VALUES (10, 'Забабурин Иван', '222-22-33', 'мужской', '2000-01-21');
+
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (1, 'Бег', current_timestamp);
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (1, 'Ходьба', current_timestamp);
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (1, 'Приседания', current_timestamp);
+
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (2, 'Бег', current_timestamp);
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (2, 'Подтягивание', current_timestamp);
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (2, 'Жим штангой', current_timestamp);
+
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (3, 'Приседания', current_timestamp);
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (3, 'Бег', current_timestamp);
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (3, 'Прыжки', current_timestamp);
+
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (4, 'Ходьба', current_timestamp);
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (4, 'Отжимание', current_timestamp);
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (4, 'Бег', current_timestamp);
+
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (5, 'Прыжки', current_timestamp);
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (5, 'Поднятие гантелей', current_timestamp);
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (5, 'Бег', current_timestamp);
+
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (6, 'Плавание', current_timestamp);
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (6, 'Ходьба', current_timestamp);
+
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (7, 'Прыжки', current_timestamp);
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (7, 'Бег', current_timestamp);
+
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (8, 'Приседания', current_timestamp);
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (8, 'Отжимания', current_timestamp);
+
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (9, 'Жим штангой', current_timestamp);
+INSERT INTO USE_CASE (USER_ID, NAME, USE_CASE_TIME) VALUES (9, 'Подтягивание', current_timestamp);

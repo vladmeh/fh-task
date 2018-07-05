@@ -14,7 +14,6 @@ function getUsers(): array
     return $result;
 }
 ?>
-
 <ul class="list-group list-group-flush" id="users-list">
     <li class="list-group-item list-group-header">Пользователи</li>
     <?php foreach ($users as $user): ?>
