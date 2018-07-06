@@ -7,7 +7,7 @@ if ($_REQUEST['user_id']) {
     $useCase = getUseCase($_REQUEST['user_id']);
 }
 
-function getUseCase($userId): array
+function getUseCase($userId)
 {
     $db = MysqlDB::getConnection();
 

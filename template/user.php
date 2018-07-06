@@ -7,7 +7,7 @@ if ($_REQUEST['user_id']) {
     $user = getUser($_REQUEST['user_id']);
 }
 
-function getUser($id): array
+function getUser($id)
 {
     $db = MysqlDB::getConnection();
     $stmt = $db->prepare('SELECT * FROM USERS WHERE ID=:id');

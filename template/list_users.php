@@ -2,7 +2,7 @@
 require_once __DIR__.'/../db/connection.php';
 
 $users = getUsers();
-function getUsers(): array
+function getUsers()
 {
     $db = MysqlDB::getConnection();
     
