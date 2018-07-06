@@ -12,4 +12,5 @@
             </li>
         </ul>
     </div>
+    <a class="btn btn-outline-light" href="https://github.com/vladmeh/fh-task" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
 </nav>

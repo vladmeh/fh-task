@@ -6,7 +6,7 @@
 
 #### Implementation Stack:
 
-* PHP 7.1.7
+* PHP ~7.1.0
 * MySQL 5.2
 * HTML 5
 * CSS (Bootstrap 4.0)
@@ -25,6 +25,9 @@ Data base
 * port : `3306`
 * username : `root`
 * password : `root`
+
+> SQL скрипт - `./data/script.sql` <br/>
+> SQL дамп данных - `./data/import.sql`
     
 Introduction
 ------------
@@ -34,3 +37,7 @@ $ php -S localhost:8080
 Run
 ------------
 В браузере `http://localhost:8080`
+
+Demo
+------------
+https://fh-task-demo.herokuapp.com
