@@ -24,6 +24,7 @@ class MysqlDB
 
         try {
             $connection = new PDO("mysql:dbname=$db;host=$host", $username, $password, [
+                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
                 PDO::ATTR_PERSISTENT => true
             ]);
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
