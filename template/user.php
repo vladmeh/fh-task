@@ -9,23 +9,22 @@ if ($_REQUEST['user_id']) {
 
 function getUser($id): array
 {
-    $db = new SQLiteDB();
-    if (!$db) echo $db->lastErrorMsg();
-    $statement = $db->prepare('SELECT * FROM USERS WHERE ID=:id');
-    $statement->bindValue(':id', $id);
-    $result = $statement->execute()->fetchArray(SQLITE3_ASSOC);
-    $db->close();
+    $db = MysqlDB::getConnection();
+    $stmt = $db->prepare('SELECT * FROM USERS WHERE ID=:id');
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return $result ? $result : [];
 }
 
 function getFirstUser(): array
 {
-    $db = new SQLiteDB();
-    if (!$db) echo $db->lastErrorMsg();
-    $statement = $db->prepare('SELECT * FROM USERS LIMIT 1');
-    $result = $statement->execute()->fetchArray(SQLITE3_ASSOC);
-    $db->close();
+    $db = MysqlDB::getConnection();
+    $stmt = $db->prepare('SELECT * FROM USERS LIMIT 1');
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return $result;
 }

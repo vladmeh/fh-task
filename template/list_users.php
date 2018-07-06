@@ -1,16 +1,16 @@
 <?php
 require_once __DIR__.'/../db/connection.php';
+
 $users = getUsers();
 function getUsers(): array
 {
+    $db = MysqlDB::getConnection();
+    
     $result = [];
-    $db = new SQLiteDB();
-    if (!$db) echo $db->lastErrorMsg();
-    $ret = $db->query('SELECT * FROM USERS');
-    while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
+    $stmt = $db->query('SELECT * FROM USERS');
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $result[] = $row;
     }
-    $db->close();
     return $result;
 }
 ?>

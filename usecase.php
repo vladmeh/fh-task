@@ -9,16 +9,16 @@ if ($_REQUEST['user_id']) {
 
 function getUseCase($userId): array
 {
+    $db = MysqlDB::getConnection();
+
     $result = [];
-    $db = new SQLiteDB();
-    if (!$db) echo $db->lastErrorMsg();
-    $statement = $db->prepare('SELECT USERS.FULL_NAME AS userName, USE_CASE.NAME AS actionName, USE_CASE.USE_CASE_TIME AS actionTime, USE_CASE.USER_ID AS uaserId FROM USERS JOIN USE_CASE ON USERS.ID = USE_CASE.USER_ID WHERE USERS.ID =:userId');
-    $statement->bindValue(':userId', $userId);
-    $ret = $statement->execute();
-    while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
+
+    $stmt = $db->prepare('SELECT USERS.FULL_NAME AS userName, USE_CASE.NAME AS actionName, USE_CASE.USE_CASE_TIME AS actionTime, USE_CASE.USER_ID AS uaserId FROM USERS JOIN USE_CASE ON USERS.ID = USE_CASE.USER_ID WHERE USERS.ID =:userId');
+    $stmt->bindValue(':userId', $userId);
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $result[] = $row;
     }
-    $db->close();
     return $result;
 }
 
