@@ -19,7 +19,7 @@ function getUser($id)
     return $result ? $result : [];
 }
 
-function getFirstUser(): array
+function getFirstUser()
 {
     $db = MysqlDB::getConnection();
     $stmt = $db->prepare('SELECT * FROM USERS LIMIT 1');
